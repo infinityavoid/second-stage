@@ -1,0 +1,1197 @@
+@import 'mixins'
+@import 'burger-menu'
+@font-face
+  font-family: "Baufra-Medium"
+  src: url("../fonts/BaufraMedium.ttf")
+
+@font-face
+  font-family: "Baufra-Bold"
+  src: url("../fonts/BaufraBold.ttf")
+
+@font-face
+  font-family: 'Montserrat-Bold'
+  src: url('../fonts/Montserrat-Bold.ttf')
+
+@font-face
+  font-family: 'Montserrat-ExtraBold'
+  src: url('../fonts/Montserrat-ExtraBold.ttf')
+
+@font-face
+  font-family: 'Montserrat-Regular'
+  src: url('../fonts/Montserrat-Regular.ttf')
+
+html
+  overflow-x: hidden
+
+body
+  margin: 0
+  padding: 0
+  position: relative
+  overflow-x: hidden
+
+.container
+  padding-left: 10px
+  padding-right: 10px
+  margin: 0 auto
+  max-width: 1400px
+  @include large-screen
+    padding-left: 45px
+    padding-right: 45px
+  @include small-screen 
+    padding-left: 33px
+    padding-right: 33px
+  
+
+hr
+  margin: 0
+  border-color: #F0F0F0
+  border-width: 1px
+
+ul
+  list-style: none
+  padding: 0
+
+h1
+  font-family: 'Montserrat-bold'
+  font-size: 87px
+  font-style: normal
+  font-weight: 700
+  line-height: 110px
+  text-transform: uppercase
+  color: #333
+  white-space: nowrap
+  @include large-screen 
+    font-style: normal
+    font-weight: 700
+    text-transform: uppercase
+    font-size: 67px
+    font-weight: 700
+    line-height: 90px
+    letter-spacing: 0px
+    text-align: left
+  
+  @include small-large-screen 
+    color: #333
+    font-size: 73px
+    font-style: normal
+    font-weight: 700
+    line-height: 90px
+    text-transform: uppercase
+  
+  @include small-medium-screen 
+    color: #333
+    font-size: 56px
+    font-style: normal
+    font-weight: 700
+    line-height: 70px
+    text-transform: uppercase
+    text-align: center
+   
+  @include small-screen 
+    color: #333
+    text-align: center
+    font-size: 40px
+    font-style: normal
+    font-weight: 700
+    line-height: 55px
+    text-transform: uppercase
+   
+
+h2
+  margin-block-start: 0
+  margin-block-end: 0
+  margin-inline-start: 0px
+  margin-inline-end: 0px
+  @include large-screen 
+    color: var(--unnamed, #333)
+    font-size: 20px
+    font-style: normal
+    font-weight: 700
+    line-height: normal
+    letter-spacing: 5px
+  
+
+
+h3
+  margin-block-start: 0
+  margin-block-end: 0
+  margin-inline-start: 0px
+  margin-inline-end: 0px
+
+a
+  text-decoration: none
+
+/*header*/
+
+header
+  max-width: 1920px
+  position: relative
+  margin: 0 auto
+
+.header__rectangle-green
+  z-index: 1000000
+  position: absolute
+  left: 1771px
+  top: 0
+  width: 149px
+  height: 211px
+  background-color: #A2CC5C
+
+.header__container
+  display: flex
+  padding-top: 38px
+  padding-bottom: 38px
+  justify-content: space-between
+  align-items: center
+
+.header__logo
+  display: flex
+  align-items: center
+
+.header__icons
+  margin-left: 84px
+  display: flex
+  justify-content: space-between
+  width: 98px
+  @include small-screen 
+    margin-left: 68px
+  
+  @include extra-small-screen 
+    display: none
+           
+
+.header__menu
+  width: 609px
+  @include large-screen 
+    display: none
+    
+
+.header__menu-list
+  justify-content: space-between
+  display: flex
+  @include medium-screen 
+    display: none
+       
+
+.header__menu-item
+  color: var(--unnamed, #333)
+  font-family: 'Montserrat-Bold'
+  font-size: 15px
+  font-style: normal
+  font-weight: 700
+  line-height: normal
+  transition: color 0.25s ease-in-out
+  cursor: pointer
+  &:hover
+    color: var(--unnamed, #A2CC5C)
+
+.header__language
+  width: 53px
+  display: flex
+  justify-content: space-between
+  @include small-medium-screen 
+    display: none
+     
+
+.header__language-item
+  color: var(--unnamed, #333)
+  font-family: 'Baufra-Medium'
+  font-size: 16px
+  font-style: normal
+  font-weight: 600
+  line-height: normal
+  transition: color 0.25s ease-in-out
+  cursor: pointer
+  &:hover
+    color: var(--unnamed, #A2CC5C)
+  &-selected
+    color: var(--unnamed, #A2CC5C)
+    font-family: 'Baufra-Medium'
+    font-size: 16px
+    font-style: normal
+    font-weight: 600
+    line-height: normal
+
+.header__glasses
+  background-image: url('../img/glasses.svg')
+  width: 39px
+  height: 15px
+  background-repeat: no-repeat
+  background-position: center
+  background-color: white
+  border: none
+  transition: background-image 0.25s ease-in-out
+  cursor: pointer
+  @include small-medium-screen 
+    display: none
+  &:hover
+    background-image: url('../img/glasses-active.svg')
+
+.header__burger-menu-button
+  display: none
+  width: 61px
+  height: 61px
+  border-style: solid
+  border-color: #333333
+  background-color: white
+  background-image: url('../img/menu-button.svg')
+  background-repeat: no-repeat
+  background-position: center
+  @include large-screen 
+    display: block
+    
+
+/*main-info*/
+
+.info
+  position: relative
+  max-width: 1920px
+  margin: 0 auto
+  background-color: #C2DA6B
+
+  .info-cubes 
+    z-index: 1001
+    position: absolute
+    top: 0
+    left: 58%
+    @include large-screen 
+      height: 606px
+    
+    @include medium-screen 
+      left: 71%
+    
+    @include small-large-screen 
+      left: 50%
+      top: 22%
+    
+    @include small-medium-screen 
+      display: none
+      
+    @include small-screen 
+      display: none
+    
+
+  .info-squares
+    position: absolute
+    z-index: 1000
+    left: 51%
+    top: -50px
+    @include small-screen 
+      display: none
+    
+
+  &__containter
+    overflow: hidden
+    @include large-screen 
+      padding-left: 45px
+      padding-right: 45px
+    
+
+  &__rectangle-right
+    background-color: white
+    position: absolute
+    height: 457px
+    width: 498px
+    top: -1px
+    left: 1423px
+
+  &__rectangle-left
+    min-width: 400px
+    width: 737px
+    height: 176px
+    background-color: white
+    position: absolute
+    bottom: -1px
+    left: -255px
+    @include large-screen 
+      height: 133px
+    
+    @include small-large-screen 
+      display: none
+    
+
+  &__section
+    display: flex
+    width: 100%
+    height: 733px
+    flex-direction: column
+    @include large-screen 
+      flex-direction: column
+      height: 606px
+    
+    @include small-large-screen 
+      height: 819px
+    
+    @include small-medium-screen 
+      margin: 0 auto
+      width: 100%
+      
+
+  &__section-top
+    width: 864px
+    height: 558px
+    @include large-screen 
+      height: 331px
+    
+    @include small-large-screen 
+      height: 380px
+    
+    @include small-medium-screen 
+      width: auto
+      display: flex
+      justify-content: center
+      
+
+  &__title
+    margin-block-start: 107px
+    margin-block-end: 121px
+    margin-inline-start: 0px
+    margin-inline-end: 0px
+    @include large-screen 
+      margin-block-start: 40px
+      margin-block-end: 0
+    
+    @include small-large-screen 
+      margin-block-start: 63px
+    
+    @include small-screen 
+      margin-block-end: 28px
+      margin-block-start: 90px
+    
+
+.year
+  color: #333
+  font-family: 'Montserrat-Regular'
+  font-size: 57px
+  font-style: normal
+  font-weight: 400
+  line-height: 80px
+  text-transform: uppercase
+  @include large-screen 
+    color: #333
+    font-size: 67px
+    font-style: normal
+    line-height: 90px
+    text-transform: uppercase
+  
+  @include small-large-screen 
+    color: #333
+    font-size: 73px
+    font-style: normal
+    line-height: 90px
+    text-transform: uppercase
+  
+  @include small-screen 
+    color: #333
+    text-align: center
+    font-family: 'Montserrat-Regular'
+    font-size: 56px
+    font-style: normal
+    line-height: 70px
+    text-transform: uppercase
+  
+
+.info__section-bottom
+  width: 100%
+  height: 175px
+  display: flex
+  align-items: center
+  justify-content: space-between
+  @include large-screen 
+    height: 275px
+    flex-direction: column-reverse
+    margin-top: 0
+    align-items: flex-start
+  @include small-large-screen 
+    flex-direction: column-reverse
+    position: relative
+  @include small-medium-screen 
+    width: auto
+    align-items: center
+
+.info__reg-socials
+  display: flex
+  align-items: center
+
+.info__button-container
+  width: 477px
+  height: 175px
+  display: flex
+  align-items: center
+  background-color: white
+  position: relative
+  @include large-screen 
+    width: 445px
+    height: 133px
+    align-self: flex-start
+  @include small-large-screen 
+    background-color: #C2DA6B
+    padding-left: 0
+  @include small-medium-screen 
+    justify-content: center
+    
+
+.reg-button
+  width: 328px
+  height: 69px
+  background-color: #333333
+  border-radius: 4px
+  background: var(--unnamed, #333)
+  box-shadow: 0px 34px 24px 0px rgba(88, 121, 34, 0.24)
+  @include small-large-screen 
+    margin-left: 0
+  &:hover
+    box-shadow: 0px 14px 24px 0px rgba(88, 121, 34, 0.24)
+  &__text
+    color: var(--unnamed, #C2DA6B)
+    text-align: center
+    font-family: 'Montserrat-Bold'
+    font-size: 18px
+    font-style: normal
+    font-weight: 700
+    line-height: 114.84%
+    text-transform: uppercase
+    cursor: pointer
+
+.socials
+  flex: 1 1
+  display: flex
+  padding-left: 40px
+  width: 147px
+  height: 24px
+  justify-content: space-between
+  @include small-large-screen 
+    display: none
+  
+
+.info__date
+  height: 124px
+  display: flex
+  flex-direction: column
+  align-self: flex-end
+  margin-bottom: 70px
+  @include large-screen 
+    align-self: flex-start
+    margin-bottom: 0
+    height: 167px
+  
+  @include small-large-screen 
+    margin: 0
+  
+  @include small-medium-screen 
+    align-self: center
+    
+
+.tournament-date
+  display: flex
+  justify-content: space-between
+  width: 540px
+  @include small-large-screen 
+    width: 400px
+  
+  @include small-screen 
+    justify-content: space-around
+  
+
+.date
+  color: var(--unnamed, #333)
+  font-family: 'Montserrat-Bold'
+  font-size: 24px
+  font-style: normal
+  font-weight: 700
+  line-height: normal
+  letter-spacing: 5px
+  @include large-screen 
+    color: var(--unnamed, #333)
+    font-size: 20px
+    font-style: normal
+    font-weight: 700
+    line-height: normal
+    letter-spacing: 5px
+  
+  @include small-screen 
+    letter-spacing: 0px
+  
+
+.date-number
+  color: var(--unnamed, #333)
+  font-family: 'Montserrat-Bold'
+  font-size: 44px
+  font-style: normal
+  font-weight: 700
+  line-height: normal
+  @include large-screen 
+    color: var(--unnamed, #333)
+    font-size: 38px
+    font-style: normal
+    font-weight: 700
+    line-height: normal
+  
+  @include small-large-screen 
+    font-size: 34px
+    font-style: normal
+    font-weight: 700
+    line-height: normal
+  
+  @include small-medium-screen 
+    font-size: 34px
+    font-style: normal
+    font-weight: 700
+    line-height: normal
+   
+
+.date-name
+  color: var(--unnamed, #333)
+  font-family: 'Montserrat-Bold'
+  font-size: 24px
+  font-style: normal
+  font-weight: 700
+  line-height: normal
+  letter-spacing: 5px
+  @include small-large-screen 
+    font-size: 20px
+    font-style: normal
+    font-weight: 700
+    line-height: normal
+    letter-spacing: 5px
+  
+  @include small-medium-screen 
+    font-size: 20px
+    font-style: normal
+    font-weight: 700
+    line-height: normal
+    letter-spacing: 5px
+   
+  @include small-screen 
+    font-size: 16px
+  
+
+.rectangle-date
+  width: 95px
+  height: 2px
+  align-self: center
+  background: var(--unnamed, #333)
+  @include small-large-screen 
+    width: 29px
+  
+
+.city
+  margin-block-start: 27px
+  @include large-screen 
+    margin-block-start: 18px
+  &__text
+    color: var(--unnamed, #333)
+    font-family: 'Montserrat-Bold'
+    font-size: 34px
+    font-style: normal
+    font-weight: 700
+    line-height: normal
+    text-align: right
+    @include large-screen 
+      color: var(--unnamed, #333)
+      text-align: center
+      font-size: 28px
+      font-style: normal
+      font-weight: 700
+      line-height: normal
+      text-align: left
+    @include small-medium-screen 
+      text-align: center
+    @include small-screen 
+      font-size: 24px
+    
+
+.alternative-socials
+  display: none
+  height: 147px
+  background-color: white
+  position: absolute
+  width: 100%
+  bottom: 0
+  left: 0
+  padding-left: 45px
+  @include small-large-screen 
+    display: block
+  @include small-medium-screen 
+    display: flex
+    justify-content: center
+    padding: 0
+  &__container
+    margin-top: 40px
+    width: 148px
+    height: 25px
+    display: flex
+    justify-content: space-between
+    @include small-medium-screen 
+      width: 148px
+      height: 25px
+    
+
+/*news*/
+
+.news
+  position: relative
+  max-width: 1920px
+  margin: 0 auto
+
+  &__rectangle-green
+    position: absolute
+    top: 0
+    left: 1455px
+    width: 465px
+    height: 209px
+    background-color: #A2CC5C
+
+  .news-cubes-right
+    position: absolute
+    left: 67%
+    top: 50px
+    @include small-large-screen 
+      display: none
+      
+
+  .news-squares-left
+    position: absolute
+    top: 1000px
+    right: 71.5%
+    @include medium-screen 
+      display: none
+      
+
+  .news-cubes-mini
+    position: absolute
+    top: 940px
+    right: 86.6%
+    @include medium-screen 
+      display: none
+      
+
+  .news-squares-right
+    position: absolute
+    top: 1500px
+    left: 86.45%
+    @include medium-screen 
+      display: none
+      
+
+  .news-cubes-left
+    position: absolute
+    top: 1800px
+    right: 76%
+    @include medium-screen 
+      display: none 
+
+  &__container
+    position: relative
+
+  &__rectangle_gray
+    position: absolute
+    top: 0
+    left: -124px
+    width: 613px
+    height: 333px
+    background-color: #f0f0f0
+    @include medium-screen 
+      display: none
+
+  &__title
+    width: 526px
+    padding-top: 150px
+    display: flex
+    @include small-large-screen 
+      padding: 0
+    @include small-medium-screen 
+      margin: 0 auto
+    @include small-screen
+      width: 328px
+    
+
+  &__rectangle_title
+    position: absolute
+    left: 0
+    top: 0
+    background-color: #C2DA6B
+    margin-top: 164px
+    margin-left: 4px
+    @include small-large-screen 
+      margin-top: 14px
+    @include small-screen
+      margin-top: 10px
+      margin-left: 2px
+
+.content-title
+  position: relative
+  height: 68px
+
+  &__text-bold
+    font-family: 'Montserrat-ExtraBold'
+    font-size: 56px
+    font-style: normal
+    font-weight: 900
+    line-height: normal
+    @include small-screen 
+      color: var(--unnamed, #333)
+      font-size: 34px
+      font-style: normal
+      font-weight: 900
+      line-height: normal
+        
+
+  &__text-normal
+    color: var(--unnamed, #333)
+    font-family: 'Montserrat-Regular'
+    font-size: 56px
+    font-style: normal
+    font-weight: 400
+    line-height: normal
+    margin-left: 22px
+    @include small-screen 
+      color: var(--unnamed, #333)
+      font-size: 34px
+      font-style: normal
+      font-weight: 400
+      line-height: normal
+        
+
+  &__rectangle
+    width: 215px
+    height: 61px
+    @include small-screen 
+      width: 215px
+      height: 34px
+      
+
+  &__text
+    z-index: 1000
+    display: flex
+    position: absolute
+    letter-spacing: 0
+    @include small-screen 
+      width: 215px       
+        
+
+.news__list 
+  margin-top: 22.5px
+  display: flex
+  flex-direction: column
+
+  &-item 
+    display: flex
+    flex-direction: row
+    margin-top: 44px
+    margin-bottom: 44px
+    cursor: pointer
+    &_right 
+      align-self: flex-end
+    @include large-screen 
+      margin-top: 33px
+      margin-bottom: 33px
+    
+    @include medium-screen 
+      margin-top: 23px
+      margin-bottom: 23px
+      align-self: start
+     
+    @include small-large-screen 
+      margin-top: 35px
+      margin-bottom: 35px
+      flex-direction: column
+     
+    @include small-medium-screen 
+      align-self: center
+
+  &-picture 
+    width: 430px
+    height: 430px
+    z-index: 123
+    @include medium-screen 
+      width: 330px
+      height: 330px
+     
+    @include small-screen 
+      width: 344px
+      height: 344px
+     
+
+  &-info 
+    width: 470px
+    height: 292px
+    align-self: flex-end
+    justify-content: space-between
+    display: flex
+    flex-direction: column
+    margin-left: 48px
+    @include medium-screen 
+      width: 360px
+    
+    @include small-large-screen 
+      margin: 20px 0 0 0
+      
+    @include small-screen 
+      width: 349px
+      align-self: start
+      
+
+  &-date
+    display: flex
+    justify-content: space-between
+    width: 287px
+  
+
+  &-item:hover 
+    .news__list-title,
+    .news__list-text 
+      color: #A2CC5C
+    
+
+    .news__list-picture 
+      animation: scaleAnimation 0.5s ease-in-out forwards
+  &-title
+    color: var(--unnamed, #333)
+    font-family: 'Baufra-Bold'
+    font-size: 32px
+    font-style: normal
+    font-weight: 700
+    line-height: 44px
+    transition: color 0.25s ease-in-out
+      
+
+  &-text
+    display: flex
+    width: 400px
+    flex-direction: column
+    color: var(--unnamed, #888)
+    font-family: 'Montserrat-Regular'
+    font-size: 16px
+    font-style: normal
+    font-weight: 400
+    line-height: 28px
+    transition: color 0.25s ease-in-out
+
+    
+.green-text
+  display: flex
+  color: var(--unnamed, #A2CC5C)
+  font-family: 'Montserrat-Regular'
+  font-size: 14px
+  font-style: normal
+  font-weight: 900
+  line-height: normal
+  width: 113px
+  justify-content: space-between
+.green-line
+  @include small-large-screen 
+    display: none
+   
+
+@keyframes scaleAnimation
+  0%
+    transform: scale(1)
+
+  100%
+    transform: scale(1.1)
+
+.show-button
+  margin-top: 31px
+  align-self: center
+  display: flex
+  justify-content: center
+  width: 230px
+  height: 69px
+  border-radius: 4px
+  border: 1px solid var(--unnamed, #BBB)
+  cursor: pointer
+  align-items: center
+  margin-bottom: 91px
+  background-color: white
+  transition: color, background-color 0.25s ease-in-out
+
+  &:hover
+    background-color: #A2CC5C
+
+  &__text
+    color: var(--unnamed, #A2CC5C)
+    font-family: 'Baufra-Medium'
+    font-size: 16px
+    font-style: normal
+    font-weight: 600
+    line-height: normal
+    &:hover
+        color: #F0F0F0
+
+/*partners*/
+
+.partners
+  max-width: 1920px
+  position: relative
+  margin: 0 auto
+  overflow: hidden
+
+  &__container
+    display: flex
+    flex-direction: column
+    height: 100%
+    justify-content: space-between
+    overflow: hidden
+
+.partners__title
+  margin-top: 85px
+  display: flex
+  justify-content: space-between
+  @include small-medium-screen 
+    justify-content: center
+  
+
+.partners__title-text
+  width: 314px
+  @include small-screen
+    width: 215px
+
+.partners__rectangle_title
+  position: absolute
+  background-color: #A2CC5C
+  margin-top: 26px
+  margin-left: 4px
+  @include small-screen 
+    margin-top: 10px
+    margin-left: -1px
+    
+
+.partners__switchers
+  display: flex
+  width: 82px
+  justify-content: space-between
+  align-items: center
+  @include small-medium-screen 
+    display: none
+  
+
+  &-button
+    background-position: center
+    background-repeat: no-repeat
+    width: 12px
+    height: 20px
+    background-color: white
+    border: none
+    cursor: pointer
+
+  .left-switch
+    background-image: url('../img/left-switch.svg')
+
+  .right-switch
+    background-image: url('../img/right-switch.svg')
+
+  .left-switch-active
+    background-image: url('../img/left-switch-active.svg')
+
+  .right-switch-active
+    background-image: url('../img/right-switch-active.svg')
+
+.slider
+  display: flex
+  overflow: hidden
+  margin-top: 95px
+  @include slider-width 
+
+
+  &-list
+    display: flex
+    transition: transform 0.5s ease
+
+  &-item
+    width: 200px
+    display: flex
+    justify-content: center
+
+.progress-bar-container
+  margin-top: 93px
+  height: 9px
+  background-color: white
+
+.progress-bar
+  height: 100%
+  width: 7%
+  background-color: #A2CC5C
+
+/*footer*/
+
+.footer
+  max-width: 1920px
+  position: relative
+  margin: 0 auto
+  background-color: #333333
+  overflow: hidden
+
+  &__container
+    display: flex
+    align-items: center
+    justify-content: space-between
+    height: 272px
+    @include medium-large-screen 
+      height: 397px
+      flex-wrap: wrap
+    
+    @include small-medium-screen 
+      height: 704px
+      justify-content: center
+    
+
+  &__info
+    height: 168px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    @include small-medium-screen 
+      width: 100%
+    
+
+  &__info-logo
+    width: 392px
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    margin: 0 auto
+
+  &__info-icons
+    width: 152px
+    height: 58px
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+  &__info-text
+    display: flex
+    width: 247px
+    flex-direction: column
+    color: var(--unnamed, #BBB)
+    font-family: 'Montserrat-Regular'
+    font-size: 14px
+    font-style: normal
+    font-weight: 400
+    line-height: 24px
+    @include small-medium-screen 
+      width: auto
+      text-align: center
+    
+
+.footer__menu
+  width: 414px
+  height: 168px
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+  @include medium-large-screen 
+    order: 1
+    width: auto
+    justify-content: center
+  
+  @include small-medium-screen 
+    order: 0
+  
+
+  &-list
+    margin: 0
+    height: 168px
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    flex-direction: column
+    @include medium-large-screen 
+      flex-direction: row
+      justify-content: center
+    
+
+    &-item
+      margin: 10px
+
+  &-item-link
+    color: #FFF
+    font-family: 'Montserrat-Regular'
+    font-size: 16px
+    font-style: normal
+    font-weight: 700
+    line-height: normal
+    height: 20px
+    transition: color 0.25s ease-in-out
+
+    &:hover
+      color: #A2CC5C
+
+.footer__contact
+  display: flex
+  flex-direction: column
+  height: 168px
+  justify-content: space-between
+
+  &-phone, &-mail
+    color: var(--unnamed, #C2DA6B)
+    font-family: 'Montserrat-Regular'
+    font-size: 24px
+    font-style: normal
+    font-weight: 700
+    line-height: normal
+    @include small-medium-screen 
+      text-align: center
+    
+
+  &-address
+    color: #FFF
+    display: flex
+    font-family: 'Montserrat-Regular'
+    font-size: 14px
+    font-style: normal
+    font-weight: 400
+    line-height: 24px
+    width: 124px
+    height: 48px
+    @include small-medium-screen 
+      text-align: center
+      align-self: center
+    
+
+.footer_title
+  height: 42px
+  max-width: 1920px
+  display: flex
+  align-items: center
+  justify-content: center
+  background-color: #040404
+  padding: 0
+
+  &-text
+    color: var(--unnamed, #BBB)
+    font-family: 'Montserrat-Regular'
+    font-size: 14px
+    font-style: normal
+    font-weight: 400
+    line-height: 181.83%
+    text-decoration-line: underline
+    cursor: pointer
+
+.footer__scroll
+  position: absolute
+  top: 194px
+  right: 46px
+  @include extra-large-screen 
+    top: 285px
+  
+  @include medium-large-screen 
+    display: none
+   
+
+.scroll-button
+  background-image: url('../img/upper-arrow.svg')
+  width: 42px
+  height: 24px
+  border: none
+  background-color: #333333
+  background-repeat: no-repeat
+  background-position: center
+  transition: background-image 0.25s ease-in-out
+  cursor: pointer
+  @include extra-large-screen 
+    background-color: #040404
+  
+
+  &:hover
+    background-image: url('../img/upper-arrow-active.svg')

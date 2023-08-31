@@ -1,0 +1,13 @@
+{
+  "name": "second-stage-yarn",
+  "version": "1.0.0",
+  "description": "test",
+  "packageManager": "yarn@3.6.1",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Ustinov Anton",
+  "license": "MIT",
+  "private": true
+}
